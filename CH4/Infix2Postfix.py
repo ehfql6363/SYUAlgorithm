@@ -1,6 +1,5 @@
 from CH4.Postfix import postfix
 
-
 def precedence(op):
     if op == '(' or op == ')':
         return 0
