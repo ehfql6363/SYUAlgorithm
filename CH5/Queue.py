@@ -1,5 +1,5 @@
 MAX_QUEUE_SIZE = 10
-class Queue():
+class CircularQueue():
     def __init__(self):
         self.front = 0
         self.rear = 0
@@ -34,6 +34,6 @@ class Queue():
         if self.front < self.rear:
             out = self.items[self.front+1:self.rear+1]
         else:
-            out = self.items[self.front+MAX_QUEUE_SIZE] \
+            out = self.items[self.front+1:MAX_QUEUE_SIZE] \
             + self.items[0:self.rear+1]
         print("[f=%s, r=%s ==>"%(self.front, self.rear), out)
