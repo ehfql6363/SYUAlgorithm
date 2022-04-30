@@ -1,28 +1,23 @@
-def bracketCheck(string):
-    from StackClass import Stack
+from CH4.Stack import Stack
+
+def bracketCheck(str):
     stack = Stack()
 
-    for char in string:
-        if char in ('{', '[', '('):
-            stack.push(char)
-        elif char in ('}', ']', ')'):
-            if stack.isEmpty():
-                print("조건 2 위반: 여는 괄호 없음")
+    for ch in str:
+        if ch in ('{', '(', '['):
+            stack.push(ch)
+        elif ch in ('}', ')', ']'):
+            if stack.isEmpty(): #괄호의 개수가 맞지 않다면 리턴
                 return False
             else:
                 left = stack.pop()
-                if (left != '(' and char == ')') or \
-                        (left != '{' and char == '}') or \
-                        (left != '[' and char == ']'):
-                    print("조건 3 위반 : 괄호의 종류가 맞지 않음")
+                if (ch == '{' and left != '{') or \
+                        (ch == '(' and left != ')') or \
+                        (ch == '[' and left != ']'): #괄호의 종류가 맞지 않으면
                     return False
 
-    if stack.isEmpty():
-        return True
-    else:
-        print("조건 1 위반 : 괄호의 개수가 맞지 않음")
-        return False
+    return stack.isEmpty() #스택이 비어있는지 확인 (괄호의 개수 및 짝이 다 맞으면 Empty-True 아니면 False
 
 print(bracketCheck("(()){}{}[{}]"))
-bracketCheck("(()){}{}[{}])")
-bracketCheck("(()){}{}[{}}")
+print(bracketCheck("(()){}{}[{}])"))
+print(bracketCheck("(()){}{}[{}}"))

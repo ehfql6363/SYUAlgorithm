@@ -1,20 +1,19 @@
+#후위 표기식
+from CH4.Stack import Stack
+
 def postfix(ex):
-    from Stack import Stack
     s = Stack()
+
     for token in ex:
-        if token in "123456789":
-            s.push(float(token))
-        elif token in "+-*/":
+        if token in "+-*/":
             b = s.pop()
             a = s.pop()
-            if token == '+':
-                s.push(a+b)
-            elif token == '-':
-                s.push(a-b)
-            elif token == '*':
-                s.push(a*b)
-            else:
-                s.push(a/b)
+            if token == '+' : s.push(a + b)
+            elif token == '-' : s.push(a - b)
+            elif token == '*' : s.push(a * b)
+            else: s.push(a / b)
+        else:
+            s.push(float(token))
 
     return s.pop()
 

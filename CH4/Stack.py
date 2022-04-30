@@ -1,4 +1,4 @@
-class Stack():
+class Stack:
     def __init__(self):
         self.top = []
 
@@ -21,30 +21,3 @@ class Stack():
 
     def clear(self):
         self.top = []
-
-
-odd = Stack()
-even = Stack()
-
-for i in range(1, 31):
-    if i % 2 == 0:
-        even.push(i)
-    else:
-        odd.push(i)
-
-print("oddStack : ", odd.top)
-print("evenStack: ", even.top)
-
-for i in range(10):
-    odd.pop()
-for i in range(5):
-    even.pop()
-
-print("oddStack : ", odd.top)
-print("evenStack: ", even.top)
-
-odd.clear()
-even.clear()
-
-print("oddStack : ", odd.top)
-print("evenStack: ", even.top)
