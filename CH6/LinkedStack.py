@@ -8,17 +8,20 @@ class LinkedStack():
     def __init__(self):
         self.top = None
 
-    def isEmpty(self): return self.top == None
-    def clear(self): self.top = None
+    def isEmpty(self):
+        return self.top == None
 
-    def push(self, item):
-        n = Node(item, self.top)
+    def clear(self):
+        self.top = None
+
+    def push(self, elem):
+        n = Node(elem, None)
         self.top = n
 
     def pop(self):
         if not self.isEmpty():
             n = self.top
-            self.top = self.n.link
+            self.top = self.top.elem
             return n.data
 
     def peek(self):
@@ -33,7 +36,7 @@ class LinkedStack():
             count += 1
         return count
 
-    def display(self, msg="LinkedStack:"):
+    def display(self, msg='LinkedStack'):
         print(msg, end='')
         node = self.top
         while not node == None:

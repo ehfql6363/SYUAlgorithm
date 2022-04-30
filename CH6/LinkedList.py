@@ -1,5 +1,6 @@
 from CH6.LinkedStack import Node
 
+
 class LinkedList():
     def __init__(self):
         self.head = None
@@ -11,22 +12,22 @@ class LinkedList():
         self.head = None
 
     def size(self):
-        node = self.head
+        n = self.head
         count = 0
-        while not node is None:
-            node = node.link
+        while not n == None:
+            n = n.link
             count += 1
         return count
 
-    def display(self, msg="LinkedList:"):
-        print(msg, end='')
+    def display(self, msg='LinkedList'):
         node = self.head
-        while not node is None:
+        print(msg, end='')
+        while not node == None:
             print(node.data, end=' ')
             node = node.link
         print()
 
-    def getNode(self, pos):
+    def getNode(self, pos): # pos번 째 노드 가져오기
         if pos < 0: return None
         node = self.head
         while pos > 0 and node != None:
@@ -34,36 +35,36 @@ class LinkedList():
             pos -= 1
         return node
 
-    def getEntry(self, pos):
+    def getEntry(self, pos): #pos번 째 노드의 데이터 가져오기
         node = self.getNode(pos)
-        if node == None:
-            return None
-        else:
-            return node.data
+        if node is None: return None
+        else: return node.data
 
-    def replace(self, pos, elem):
+    def replace(self, pos, elem): #pos번 째 노드의 데이터를 elem으로 대체
         node = self.getNode(pos)
-        if node != None: node.data = elem
+        if node is not None:
+            node.data = elem
 
-    def find(self, data):
+    def find(self, data): #데어터가 data인 노드 반환
         node = self.head
-        while node is not None:
-            if node.data == data: return node
+        while not node is None:
+            if node.data == data:
+                return node
             node = node.link
         return None
 
     def insert(self, pos, elem):
-        before = self.getNode(pos - 1)
-        if before == None:
+        before = self.getNode(pos-1)
+        if before is None:
             self.head = Node(elem, self.head)
         else:
             node = Node(elem, before.link)
             before.link = node
 
     def delete(self, pos):
-        before = self.getNode(pos - 1)
-        if before == None:
-            if self.head is not None:
+        before = self.getNode(pos-1)
+        if before is None:
+            if self.head != None:
                 self.head = self.head.link
         elif before.link != None:
             before.link = before.link.link
