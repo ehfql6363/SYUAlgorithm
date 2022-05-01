@@ -1,7 +1,12 @@
-def topologicalSort(vertex, graph):
-    n = len(vertex)
-    inDeg = [0] * n
+import collections
 
-    for i in range(n):
-        for j in range(n):
-            if
+def bfsST(graph, start):
+    visited = set([start])
+    queue = collections.deque([start])
+    while queue:
+        vtx = queue.popleft()
+        nbr = graph[vtx] - visited
+        for u in nbr:
+            print(f"({v}, {u})", end='')
+            visited.add(u)
+            queue.append(u)

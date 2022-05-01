@@ -9,15 +9,14 @@ graph = {'A': {'B', 'C'},
          'G': {'E', 'H'},
          'H': {'E', 'G'}}
 
-def bfs(graph, start):
-    visited = {start}
-    queue = collections.deque(start)
-    while queue:
-        vertex = queue.popleft()
-        print(vertex, end=" ")
-        nbr = graph[vertex] - visited
-        for v in nbr:
-            visited.add(v)
-            queue.append(v)
 
-bfs(graph, 'A')
+def bfs(graph, start):
+    visited = set([start])
+    queue = collections.deque([start])
+    while queue:
+        v = queue.popleft()
+        print(v, end=' ')
+        nbr = graph[v] - visited
+        for next in nbr:
+            visited.add(next)
+            queue.append(next)
