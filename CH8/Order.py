@@ -9,7 +9,7 @@ def preorder(n):
 def inorder(n):
     if n is not None:
         inorder(n.left)
-        print(n.data, end=' ')
+        print(n.data, end= ' ')
         inorder(n.right)
 
 def postorder(n):
