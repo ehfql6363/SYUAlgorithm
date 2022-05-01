@@ -11,17 +11,17 @@ table =[('A', '.-'),    ('B', '-...'),  ('C', '-.-.'),  ('D', '-..'),
 def makeMorseTree():
     root = TNode(None, None, None)
     for tp in table:
-        code = tp[1] #모스 부호만 불러오기
+        code = tp[1]
         node = root
 
         for c in code:
-            if c =='.':
+            if c == '.':
                 if node.left == None:
                     node.left = TNode(None, None, None)
                 node = node.left
-            elif c=='-':
+            elif c == '-':
                 if node.right == None:
-                    node.right = TNode(None, None, None)
+                    node.right == TNode(None, None, None)
                 node = node.right
 
         node.data = tp[0]
@@ -29,11 +29,13 @@ def makeMorseTree():
 
 def decode(root, code):
     node = root
-    for c in code :
-        if c=='.' : node = node.left
-        elif c=='-': node = node.right
+    for c in code:
+        if c == '.':
+            node = node.left
+        elif c == '-':
+            node = node.right
     return node.data
 
-def encode(ch):
-    idx = ord(ch) - ord('A')
+def encode(char):
+    idx = ord(char) - ord('A')
     return table[idx][1]

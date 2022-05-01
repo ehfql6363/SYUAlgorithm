@@ -1,6 +1,5 @@
 MAX_QUEUE_SIZE = 10
 
-
 class CircularQueue():
     def __init__(self):
         self.front = 0
