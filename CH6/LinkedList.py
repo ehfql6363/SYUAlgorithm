@@ -64,7 +64,7 @@ class LinkedList():
     def delete(self, pos):
         before = self.getNode(pos-1)
         if before is None:
-            if self.head != None:
+            if self.head != None: #열결리스트에 한개의 노드만 존재할 때
                 self.head = self.head.link
         elif before.link != None:
             before.link = before.link.link

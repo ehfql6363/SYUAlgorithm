@@ -54,8 +54,8 @@ class DoublyLinkedDeque():
     def deleteFront(self):
         if not self.isEmpty():
             data = self.front.elem
-            self.front = self.fornt.next
-            if self.front.next == None:
+            self.front = self.front.next
+            if self.front == None:
                 self.rear = None
             else:
                 self.front.prev = None

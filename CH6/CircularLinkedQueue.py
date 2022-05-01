@@ -6,7 +6,6 @@ class CircularLinkedQueue():
         # front = tail.link
         # rear = tail
 
-
     def isEmpty(self):
         return self.tail == None
     def clear(self):
@@ -35,12 +34,13 @@ class CircularLinkedQueue():
             return data
 
     def size(self):
-        if self.isEmpty(): return 0
+        if self.isEmpty():
+            return 0
         else:
-            count = 1
             node = self.tail.link
-            while node != self.tail:
-                node = node.lnk
+            count = 1
+            while node is not self.tail:
+                node = node.link
                 count += 1
             return count
 
