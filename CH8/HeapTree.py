@@ -21,14 +21,14 @@ class MaxHeap():
         idx = self.size()
         while idx != 1 and n > self.parent(idx):
             self.heap[idx] = self.parent(idx)
-            idx = idx // 2
+            idx = idx//2
         self.heap[idx] = n
 
     def delete(self):
         parent = 1
         child = 2
         if not self.isEmpty():
-            hroot = self.heap[1]
+            hroot = self.heap[1] #delete할 때 나오는 값
             last = self.heap[self.size()]
             while child <= self.size():
                 if child < self.size() and self.left(parent) < self.right(parent):
@@ -43,3 +43,6 @@ class MaxHeap():
             self.heap[parent] = last
             self.heap.pop(-1)
             return hroot
+
+
+

@@ -2,7 +2,7 @@
 from CH4.Stack import Stack
 
 def postfix(ex):
-    s = Stack()
+    s = Stack() #피연산자만 넣음
 
     for token in ex:
         if token in "+-*/":
@@ -17,5 +17,6 @@ def postfix(ex):
 
     return s.pop()
 
-ex = "82/3-32*+"
-print(postfix(ex))
+# test
+# ex = "82/3-32*+"
+# print(postfix(ex))
