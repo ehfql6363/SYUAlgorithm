@@ -21,6 +21,6 @@ def printStep(arr, index):
     print(arr)
 
 
-arr = [3,4,5,2,6,1,8,9,7,0]
-print("원래 배열:",arr)
-selectionSort(arr)
+# arr = [3,4,5,2,6,1,8,9,7,0]
+# print("원래 배열:",arr)
+# selectionSort(arr)
