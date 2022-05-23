@@ -16,19 +16,19 @@ def partition(A, left, right):
     pivot = A[left]
 
     while lo <= hi:
-        while lo <= right and A[lo] <= A[pivot]:
+        while lo <= right and A[lo] <= pivot:
             lo += 1
-        while hi > left and A[hi] >= A[pivot]:
+        while hi > left and A[hi] >= pivot:
             hi -= 1
 
         if lo < hi:
             A[hi], A[lo] = A[lo], A[hi]
 
-    A[hi], A[pivot] = A[pivot], A[hi]
+    A[hi], A[left] = A[left], A[hi]
 
     return hi
 
 
-arr = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
-print("배열 : ", arr)
-print("[축소정렬] 3번째 작은 수 = ", quickSelection(arr, 0, len(arr) - 1, 3))
+# arr = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+# print("배열 : ", arr)
+# print("[축소정렬] 3번째 작은 수 = ", quickSelection(arr, 0, len(arr) - 1, 3))
