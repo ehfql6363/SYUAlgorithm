@@ -15,12 +15,10 @@ def radixSort(arr):
     for i in range(BUCKETS):
         queues.append(Queue())
 
-    n = len(arr)
-
     factor = 1
     for i in range(DIGITS):
-        for j in range(n):
-            queues[(arr[j] // factor) % 10].put(arr[j])
+        for j in arr:
+            queues[(j // factor) % 10].put(j)
 
         idx = 0
         for k in range(BUCKETS):
